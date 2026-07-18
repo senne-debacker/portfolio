@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <Layout title="My Work">
@@ -11,7 +13,7 @@ import Layout from '../layouts/Layout.astro';
 
 <div class="work-grid">
   <!-- Project 1 -->
-  <a href="/work/1" class="work-card">
+  <a href={`${baseUrl}/work/1`} class="work-card">
     <div class="iframe-placeholder">
       <span>[ Project 1 Preview / Figma Embed ]</span>
     </div>
@@ -22,7 +24,7 @@ import Layout from '../layouts/Layout.astro';
   </a>
 
   <!-- Project 2 -->
-  <a href="/work/2" class="work-card">
+  <a href={`${baseUrl}/work/2`} class="work-card">
     <div class="iframe-placeholder">
       <span>[ Project 2 Preview / Figma Embed ]</span>
     </div>
@@ -33,7 +35,7 @@ import Layout from '../layouts/Layout.astro';
   </a>
 
   <!-- Project 3 -->
-  <a href="/work/3" class="work-card">
+  <a href={`${baseUrl}/work/3`} class="work-card">
     <div class="iframe-placeholder">
       <span>[ Project 3 Preview / Figma Embed ]</span>
     </div>
