@@ -24,22 +24,22 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
-          cache-dependency-path: portfolio/package-lock.json # Tell cache where lockfile is
+          cache-dependency-path: portfolio/package-lock.json
 
       - name: Install dependencies
         run: npm ci
-        working-directory: portfolio # Run install inside subfolder
+        working-directory: portfolio
 
       - name: Build site
         run: npm run build
-        working-directory: portfolio # Run build inside subfolder
+        working-directory: portfolio
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: portfolio/dist # Upload from the correct built dist folder
+          path: portfolio/dist
 
   deploy:
     name: Deploy to GitHub Pages
